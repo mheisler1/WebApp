@@ -1,4 +1,5 @@
 class JobPostingsController < ApplicationController
+    before_action :set_job_posting, only: [:show]
   def index
   end
 
@@ -18,8 +19,14 @@ class JobPostingsController < ApplicationController
     end
 
     private
+    
     def jobPostingParams
         params.require(:job_posting).permit(:title, :company, :jobType, :salary, :duties, :basicQualiifications, :education, :skills, :experience, :howToApply)
     end
+    
+    def set_job_posting
+      @job_posting = JobPosting.find(params[:id])
+    end
+    
 
 end

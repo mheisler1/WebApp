@@ -1,7 +1,8 @@
 class JobPostingsController < ApplicationController
     before_action :set_job_posting, only: [:show]
-  def index
-  end
+
+    def index
+    end
 
     def new
         @job_posting = JobPosting.new

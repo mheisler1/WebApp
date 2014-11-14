@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'job_postings/show'
+
     resources :job_postings
   get 'job_posting/index'
 

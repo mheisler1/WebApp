@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141113024517) do
     t.string   "jobType"
     t.string   "salary"
     t.text     "duties"
-    t.text     "basicQualiifications"
+    t.text     "basicQualifications"
     t.string   "education"
     t.text     "skills"
     t.string   "experience"

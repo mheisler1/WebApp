@@ -10,7 +10,7 @@
     <tbody>
         <% @job_postings.each do |job_posting|%>
         <tr>
-            <td><%= job_posting.title %></td>
+            <td><%= link_to job_posting.title, job_posting %></td>
             <td><%= job_posting.company %></td>
             <td><%= job_posting.job_type %></td>
         </tr>

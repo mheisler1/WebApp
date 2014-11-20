@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113024517) do
+ActiveRecord::Schema.define(version: 20141120013207) do
 
   create_table "job_postings", force: true do |t|
     t.string   "title"
     t.string   "company"
-    t.string   "jobType"
+    t.string   "job_type"
     t.string   "salary"
     t.text     "duties"
-    t.text     "basicQualifications"
+    t.text     "basic_qualifications"
     t.string   "education"
     t.text     "skills"
     t.string   "experience"
-    t.text     "howToApply"
+    t.text     "how_to_apply"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

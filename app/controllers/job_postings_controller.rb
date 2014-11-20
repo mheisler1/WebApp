@@ -20,7 +20,6 @@ class JobPostingsController < ApplicationController
     end
 
     private
-    
     def jobPostingParams
         params.require(:job_posting).permit(:title, :company, :job_type, :salary, :duties, :basic_qualifications, :education, :skills, :experience, :how_to_apply)
     end

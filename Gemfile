@@ -39,3 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'tzinfo-data'
+
+# devise gem for login authentication
+gem 'devise'

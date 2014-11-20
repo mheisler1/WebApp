@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  get 'job_postings/show'
+    devise_for :admins
+    get 'job_postings/show'
 
     resources :job_postings
-  get 'job_posting/index'
+    get 'job_postings/index'
+    
+    get "/display", :to=>"job_postings#display"
 
     root :to => "job_postings#index"
 

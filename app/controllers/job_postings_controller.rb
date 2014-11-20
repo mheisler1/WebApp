@@ -4,6 +4,10 @@ class JobPostingsController < ApplicationController
     def index
     end
 
+    def display
+        @job_postings = JobPosting.all
+    end
+    
     def new
         @job_posting = JobPosting.new
     end

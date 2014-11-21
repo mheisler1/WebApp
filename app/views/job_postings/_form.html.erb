@@ -51,6 +51,16 @@
   <%= f.label :how_to_apply %><br>
   <%= f.text_area :how_to_apply %>
   </div>
+
+
+<% if admin_signed_in? %>
+  <div class="field">
+    <%= f.label :approved %><br>
+    <%= f.check_box :approved %>
+  </div>
+<% end %>
+
+
   <div class="actions">
   <%= f.submit %>
   </div>

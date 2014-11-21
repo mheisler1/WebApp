@@ -1,5 +1,7 @@
 class JobPostingsController < ApplicationController
-    before_action :set_job_posting, only: [:show]
+    before_action :set_job_posting, only: [:show, :edit]
+
+    skip_before_filter :authenticate_admin!, :except => [:edit, :update, :destroy]
 
     def index
     end
@@ -23,9 +25,18 @@ class JobPostingsController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+    end
+
+    def destroy
+    end
+
     private
     def jobPostingParams
-        params.require(:job_posting).permit(:title, :company, :job_type, :salary, :duties, :basic_qualifications, :education, :skills, :experience, :how_to_apply)
+        params.require(:job_posting).permit(:title, :company, :job_type, :salary, :duties, :basic_qualifications, :education, :skills, :experience, :how_to_apply, :approved)
     end
     
     def set_job_posting

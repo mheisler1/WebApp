@@ -1,5 +1,5 @@
 class JobPostingsController < ApplicationController
-    before_action :set_job_posting, only: [:show, :edit]
+    before_action :set_job_posting, only: [:show, :edit, :update]
 
     skip_before_filter :authenticate_admin!, :except => [:edit, :update, :destroy]
 
@@ -7,7 +7,11 @@ class JobPostingsController < ApplicationController
     end
 
     def display
-        @job_postings = JobPosting.all
+        @job_postings = JobPosting.where(approved:true)
+    end
+
+    def admin_view
+        @job_postings = JobPosting.where(approved: false)
     end
     
     def new
@@ -29,6 +33,13 @@ class JobPostingsController < ApplicationController
     end
 
     def update
+      respond_to do |format|
+        if @job_posting.update(jobPostingParams)
+            format.html { redirect_to @job_posting, notice: 'Job posting was successfully updated.' }
+        else
+            format.html { render :edit }
+        end
+      end
     end
 
     def destroy

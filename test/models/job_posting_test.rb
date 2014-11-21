@@ -11,7 +11,6 @@ class JobPostingTest < ActiveSupport::TestCase
         posting.basicQualifications = "Current student"
         posting.education = "Associates in Computer Science or equivalent experience"
         posting.skills = "Working in a team environment"
-        posting.experience = "Experience with HTML/CSS and JavaScript"
         posting.howToApply = "Go to www.Menards.com"
         
         assert posting.save
@@ -64,13 +63,7 @@ class JobPostingTest < ActiveSupport::TestCase
         assert !posting.save # save should fail because there are errors. 
         assert posting.errors[:skills].include?("can't be blank")
     end
-    
-    test "should not save unless experience is filled in" do
-        posting = JobPosting.new
-        assert !posting.save # save should fail because there are errors. 
-        assert posting.errors[:experience].include?("can't be blank")
-    end
-    
+
     test "should not save unless how to apply is filled in" do
         posting = JobPosting.new
         assert !posting.save # save should fail because there are errors. 

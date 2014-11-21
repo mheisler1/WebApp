@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :job_postings
     get 'job_postings/index'
     
+    get "/admin_view", :to => "job_postings#admin_view"
     get "/display", :to=>"job_postings#display"
 
     root :to => "job_postings#index"

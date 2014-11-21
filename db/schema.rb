@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121043257) do
+ActiveRecord::Schema.define(version: 20141121051059) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141121043257) do
     t.string   "salary"
     t.text     "duties"
     t.text     "basic_qualifications"
-    t.string   "education"
+    t.text     "education",            limit: 255
     t.text     "skills"
     t.text     "how_to_apply"
     t.datetime "created_at"

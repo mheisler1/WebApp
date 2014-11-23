@@ -1,3 +1,14 @@
+<% if admin_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_admin_session_path)  %>
+  </li>
+<% end %>
+
+
 <h1>Job Listings</h1>
 <table>
     <thead>
@@ -19,3 +30,10 @@
 </table>
 
 <%=link_to "New Job", :controller=>"job_postings", :action=>"new" %>
+
+<br>
+<br>
+
+<% if admin_signed_in? %>
+    <%= link_to "Admin View", admin_view_path %>
+<% end %>

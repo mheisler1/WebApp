@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "/admin_view", :to => "job_postings#admin_view"
     get "/display", :to=>"job_postings#display"
 
-    root :to => "job_postings#index"
+    root :to => "job_postings#display"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

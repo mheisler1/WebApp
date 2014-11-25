@@ -7,7 +7,7 @@ class JobPostingsController < ApplicationController
     end
 
     def display
-        @job_postings = JobPosting.where(approved:true)
+        @job_postings = JobPosting.where(approved:true).order(created_at: :desc)
     end
 
     def admin_view

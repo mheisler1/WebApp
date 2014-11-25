@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125000120) do
+ActiveRecord::Schema.define(version: 20141125003434) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20141125000120) do
     t.text     "how_to_apply"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved"
+    t.boolean  "approved",                         default: false
     t.integer  "job_type_id"
   end
 

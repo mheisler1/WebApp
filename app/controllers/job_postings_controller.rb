@@ -16,6 +16,7 @@ class JobPostingsController < ApplicationController
     
     def new
         @job_posting = JobPosting.new
+        @job_type = JobType.all.collect {|t| [t.job_type, t.id]}
     end
 
     def create
@@ -30,6 +31,7 @@ class JobPostingsController < ApplicationController
     end
 
     def edit
+        @job_type = JobType.all.collect {|t| [t.job_type, t.id]}
     end
 
     def update
@@ -47,11 +49,11 @@ class JobPostingsController < ApplicationController
 
     private
     def jobPostingParams
-        params.require(:job_posting).permit(:title, :company, :job_type, :salary, :duties, :basic_qualifications, :education, :skills, :how_to_apply, :approved)
+        params.require(:job_posting).permit(:title, :company, :job_type_id, :salary, :duties, :basic_qualifications, :education, :skills, :how_to_apply, :approved)
     end
     
     def set_job_posting
-      @job_posting = JobPosting.find(params[:id])
+      @job_posting = JobPosting.includes(:job_type).find(params[:id])
     end
     
 

@@ -20,8 +20,8 @@
   <%= f.text_field :company %>
   </div>
   <div class="field">
-  <%= f.label :job_type %><br>
-  <%= f.text_field :job_type %>
+  <%= f.label :job_type_id %><br>
+  <%= f.select :job_type_id, @job_type, :include_blank => true %>
   </div>
   <div class="field">
   <%= f.label :salary %><br>

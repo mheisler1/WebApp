@@ -5,13 +5,13 @@ class JobPostingTest < ActiveSupport::TestCase
         posting = JobPosting.new
         posting.title = "Software Developer"
         posting.company = "Menards"
-        posting.jobType = "Full-Time"
+        posting.job_type_id = 1
         posting.salary = "$45,000"
         posting.duties = "Creates new websites on the fly"
-        posting.basicQualifications = "Current student"
+        posting.basic_qualifications = "Current student"
         posting.education = "Associates in Computer Science or equivalent experience"
         posting.skills = "Working in a team environment"
-        posting.howToApply = "Go to www.Menards.com"
+        posting.how_to_apply = "Go to www.Menards.com"
         
         assert posting.save
     end
@@ -31,7 +31,7 @@ class JobPostingTest < ActiveSupport::TestCase
     test "should not save unless job type is filled in" do
         posting = JobPosting.new
         assert !posting.save # save should fail because there are errors. 
-        assert posting.errors[:jobType].include?("can't be blank")
+        assert posting.errors[:job_type_id].include?("can't be blank")
     end
     
     test "should not save unless salary is filled in" do
@@ -49,7 +49,7 @@ class JobPostingTest < ActiveSupport::TestCase
     test "should not save unless basic qualifications are filled in" do
         posting = JobPosting.new
         assert !posting.save # save should fail because there are errors. 
-        assert posting.errors[:basicQualifications].include?("can't be blank")
+        assert posting.errors[:basic_qualifications].include?("can't be blank")
     end
     
     test "should not save unless education is filled in" do
@@ -67,7 +67,7 @@ class JobPostingTest < ActiveSupport::TestCase
     test "should not save unless how to apply is filled in" do
         posting = JobPosting.new
         assert !posting.save # save should fail because there are errors. 
-        assert posting.errors[:howToApply].include?("can't be blank")
+        assert posting.errors[:how_to_apply].include?("can't be blank")
     end
     
 end

@@ -1,25 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  company: MyString
-  jobType: MyString
-  salary: MyString
-  duties: MyText
-  basicQualifications: MyText
-  education: MyString
-  skills: MyText
-  experience: MyString
-  howToApply: MyText
+  title: Software Engineer
+  company: Target
+  job_type_id: 1
+  salary: $45,000
+  duties: Build software
+  basic_qualifications: 0-6 months OOP experience
+  education: Associates Degree
+  skills: Java, XML, Eclipse IDE
+  how_to_apply: www.target.com
 
 two:
-  title: MyString
-  company: MyString
-  jobType: MyString
-  salary: MyString
-  duties: MyText
-  basicQualifications: MyText
-  education: MyString
-  skills: MyText
-  experience: MyString
-  howToApply: MyText
+  title: Web Developer
+  company: JB Systems
+  job_type_id: 2
+  salary: $25/hour
+  duties: Build websites for clients
+  basic_qualifications: 1 year web design experience
+  education: Some college
+  skills: PHP, HTML5, CSS3, XML
+  how_to_apply: Stop in, in person to apply

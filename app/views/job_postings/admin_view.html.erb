@@ -1,7 +1,24 @@
 <h1>Job Listings Queue</h1>
-<%= render 'display_table' %>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Job Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @job_postings.each do |job_posting|%>
+        <tr>
+            <td><%= link_to job_posting.title, job_posting %></td>
+            <td><%= job_posting.company %></td>
+            <td><%= job_posting.job_type.job_type %></td>
+            <td><%= link_to 'Edit', edit_job_posting_path(job_posting) %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
 
-<br>
 <br>
 
 <%= link_to "Display Page", display_path %>

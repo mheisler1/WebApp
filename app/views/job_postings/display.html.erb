@@ -3,4 +3,6 @@
 
 <br>
 
+<% if !admin_signed_in? %>
 <%=link_to "New Job", :controller=>"job_postings", :action=>"new" %>
+<% end %>

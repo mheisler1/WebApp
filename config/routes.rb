@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
     devise_for :admins
-    get 'job_postings/show'
 
     resources :job_postings
-    get 'job_postings/index'
     
     get "/admin_view", :to => "job_postings#admin_view"
     get "/display", :to=>"job_postings#display"
 
-    root :to => "job_postings#display"
+    root :to => "job_postings#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

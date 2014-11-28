@@ -29,7 +29,8 @@ JobPosting.create(title: 'Software Developer', company: 'CVTC', job_type_id: '1'
 JobPosting.create(title: 'Software Engineer', company: 'University of Wisconin-Eau Claire', job_type_id: '1', salary: '$45,000', duties: 'Develop and maintain software for the school\'s Mac lab', basic_qualifications: '1-2 years of OOP experience', education: 'Associates Degree', skills: 'Objective-C, unit testing', how_to_apply: 'Go to www.uwec.edu', approved: 'true')
 
 
-
+# Admin Login
+Admin.create(email: 'admin@admin.com', password: "admin1234", password_confirmation: "admin1234" )
 
 
 

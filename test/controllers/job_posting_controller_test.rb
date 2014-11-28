@@ -1,11 +1,13 @@
 require 'test_helper'
 
 class JobPostingControllerTest < ActionController::TestCase
-  def setup
-    @controller = JobPostingControllerTest.new
-  end
 
-  test "should get index" do
+      setup do
+        @job_posting = job_postings(:one)
+      end
+
+
+    test "should get index" do
     get :index
     assert_response :success
   end

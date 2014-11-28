@@ -7,17 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<% if admin_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_admin_session_path)  %>
-  </li>
-<% end %>
-
+    <ul id="navlist">
+    <% if admin_signed_in? %>
+        <li>
+        <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+        </li>
+    <% else %>
+        <li>
+        <%= link_to('Login', new_admin_session_path)  %>
+        </li>
+    <% end %>
+    <li>
+        <%= link_to('Home', job_postings_path)%>
+    </li>
+</ul>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

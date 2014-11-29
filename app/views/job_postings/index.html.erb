@@ -5,4 +5,12 @@
   </p>
 <% end %>
 
+<h2>Top 10 Most Recent Jobs</h2>
+
 <%= render 'display_table' %>
+
+<br>
+
+<% if !admin_signed_in? %>
+<%=link_to "New Job", :controller=>"job_postings", :action=>"new" %>
+<% end %>

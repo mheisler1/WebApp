@@ -1,8 +1,2 @@
-<h1>Job Listings</h1>
+<h2>Job Listings Search Results</h2>
 <%= render 'display_table' %>
-
-<br>
-
-<% if !admin_signed_in? %>
-<%=link_to "New Job", :controller=>"job_postings", :action=>"new" %>
-<% end %>

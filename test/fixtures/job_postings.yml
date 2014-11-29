@@ -1,23 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: Software Engineer
   company: Target
-  job_type_id: 1
+  job_type: Internship
   salary: $45,000
   duties: Build software
   basic_qualifications: 0-6 months OOP experience
   education: Associates Degree
   skills: Java, XML, Eclipse IDE
   how_to_apply: www.target.com
+  approved: true
+  job_type_id: 3
 
 two:
+  id: 2
   title: Web Developer
   company: JB Systems
-  job_type_id: 2
+  job_type: Full-Time
   salary: $25/hour
   duties: Build websites for clients
   basic_qualifications: 1 year web design experience
   education: Some college
   skills: PHP, HTML5, CSS3, XML
   how_to_apply: Stop in, in person to apply
+  approved: true
+  job_type_id: 1

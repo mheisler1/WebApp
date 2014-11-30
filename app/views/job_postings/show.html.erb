@@ -15,10 +15,17 @@
   <%= @job_posting.job_type.job_type %>
 </p>
 
-<p>
-  <strong>Salary:</strong>
-  <%= @job_posting.salary %>
-</p>
+<% if @job_posting.pay_type.pay_type == 'Hourly' %>
+  <p>
+    <strong>Salary:</strong>
+    <%= number_to_currency(@job_posting.salary) %>/hr
+  </p>
+<% else %>
+  <p>
+    <strong>Salary:</strong>
+    <%= number_to_currency(@job_posting.salary, precision: 0) %>/yr
+  </p>
+<% end %>
 
 <p>
   <strong>Duties:</strong>

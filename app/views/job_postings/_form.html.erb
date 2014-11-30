@@ -24,6 +24,10 @@
   <%= f.select :job_type_id, @job_type, :include_blank => true %>
   </div>
   <div class="field">
+  <%= f.label :pay_type_id %><br>
+  <%= f.select :pay_type_id, @pay_type, :include_blank => true %>
+  </div>
+  <div class="field">
   <%= f.label :salary %><br>
   <%= f.text_field :salary %>
   </div>

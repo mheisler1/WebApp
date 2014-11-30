@@ -38,3 +38,7 @@ Admin.create(email: 'admin@admin.com', password: "admin1234", password_confirmat
 JobType.create(job_type: 'Full-Time')
 JobType.create(job_type: 'Part-Time')
 JobType.create(job_type: 'Internship')
+
+# Job Types
+PayType.create(pay_type: 'Salary')
+PayType.create(pay_type: 'Hourly')

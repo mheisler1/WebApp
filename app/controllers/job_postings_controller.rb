@@ -12,7 +12,7 @@ class JobPostingsController < ApplicationController
     end
 
     def admin_view
-        @job_postings = JobPosting.where(approved: false)
+        @job_postings = JobPosting.where(approved: false).order(created_at: :desc)
     end
     
     def new

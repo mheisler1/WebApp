@@ -28,6 +28,9 @@ class JobPostingsController < ApplicationController
             if @job_posting.save
                 format.html { redirect_to @job_posting, notice: 'Job posting was successfully created.' }
             else
+              @job_type = JobType.all.collect {|t| [t.job_type, t.id]}
+              @pay_type = PayType.all.collect {|p| [p.pay_type, p.id]}
+              @location_type = LocationType.all.collect {|l| [l.location_type, l.id]}
                 format.html { render :new }
             end
         end

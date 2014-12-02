@@ -1,0 +1,14 @@
+<%= form_tag display_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <p>
+    <%=select_tag :job_type,
+        options_for_select(JobType.all.collect {|t| [t.job_type, t.id]}), :include_blank => true%>
+    <%=select_tag :pay_type,
+        options_for_select(PayType.all.collect {|p| [p.pay_type, p.id]}), :include_blank => true%>
+    <%=select_tag :location_type,
+        options_for_select(LocationType.all.collect {|l| [l.location_type, l.id]}), :include_blank => true%>
+<% end %>
+  </p>

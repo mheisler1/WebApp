@@ -8,22 +8,17 @@
 </head>
 <body>
     <ul id="navlist">
-    <% if admin_signed_in? %>
+
+        <li><%= link_to "Home",         root_path %></li>
+        <% if user_signed_in? || admin_signed_in? %>
         <li>
-        <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
         </li>
-        <li>
-        <%= link_to('Admin', admin_view_path)%>
-        </li>
-    <% else %>
-        <li>
-        <%= link_to('Login', new_admin_session_path)  %>
-        </li>
-    <% end %>
-    <li>
-        <%= link_to('Home', job_postings_path)%>
-    </li>
-</ul>
+        <% else %>
+        <li><%= link_to "Admin Login", new_admin_session_path %></li>
+        <li><%= link_to "Create Job Posting", new_user_session_path %></li>
+        <% end %>
+    </ul>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

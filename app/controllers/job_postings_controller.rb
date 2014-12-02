@@ -8,7 +8,7 @@ class JobPostingsController < ApplicationController
     end
 
     def display
-        @job_postings = JobPosting.where(approved:true).search(params[:search]).order(created_at: :desc)
+        @job_postings = JobPosting.where(approved:true).search(params).order(created_at: :desc)
     end
 
     def admin_view

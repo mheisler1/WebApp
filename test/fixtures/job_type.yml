@@ -4,3 +4,6 @@ one:
   id: 1
   job_type: Full Time
 
+part_time:
+  id: 2
+  job_type: Part Time

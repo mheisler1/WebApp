@@ -4,14 +4,14 @@ one:
   id: 1
   title: Software Engineer
   company: Target
-  salary: $45,000
+  salary: "$45,000"
   duties: Build software
   basic_qualifications: 0-6 months OOP experience
   education: Associates Degree
   skills: Java, XML, Eclipse IDE
   how_to_apply: www.target.com
   approved: true
-  job_type_id: 3
+  job_type_id: 2
   pay_type_id: 1
   location_type_id: 2
 

@@ -32,7 +32,8 @@ JobPosting.create(title: 'Software Engineer', company: 'University of Wisconin-E
 # Admin Login
 Admin.create(email: 'admin@admin.com', password: "admin1234", password_confirmation: "admin1234" )
 
-
+# Create Users
+User.create(email: 'user@user.com', password: 'user1234', password_confirmation: 'user1234', name: 'some person', company: 'Menards', phone: '715-555-5555', approved: false)
 
 # Job Types
 JobType.create(job_type: 'Full-Time')

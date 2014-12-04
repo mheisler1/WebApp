@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-    devise_for :admins
+  devise_for :users, :path_prefix => 'my'
+    devise_for :admins, :path_prefix => 'd'
 
     resources :job_postings
+    resources :user
+    resources :admins
     
     get "/admin_view", :to => "job_postings#admin_view"
     get "/display", :to=>"job_postings#display"

@@ -13,6 +13,7 @@ class JobPostingsController < ApplicationController
 
     def admin_view
         @job_postings = JobPosting.where(approved: false).order(created_at: :desc)
+        @users = User.where(approved: false).order(created_at: :desc)
     end
     
     def new
@@ -40,7 +41,6 @@ class JobPostingsController < ApplicationController
         @job_type = JobType.all.collect {|t| [t.job_type, t.id]}
         @pay_type = PayType.all.collect {|p| [p.pay_type, p.id]}
         @location_type = LocationType.all.collect {|l| [l.location_type, l.id]}
-
     end
 
     def update

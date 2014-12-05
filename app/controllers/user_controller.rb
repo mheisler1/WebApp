@@ -1,6 +1,13 @@
 class UserController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update]
+    before_action :authenticate_user!, only: [:index]
+    
+    skip_before_filter :authenticate_admin!, :except => [:edit, :update, :destroy, :admin_view]
 
+    def index
+        @job_postings = JobPosting.where("user_id = ?", current_user.id).order(created_at: :desc)
+    end
+    
     def edit
     end
 

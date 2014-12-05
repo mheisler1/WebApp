@@ -1,5 +1,6 @@
 class JobPostingsController < ApplicationController
     before_action :set_job_posting, only: [:show, :edit, :update]
+    before_action :authenticate_user!, only: [:new]
 
     skip_before_filter :authenticate_admin!, :except => [:edit, :update, :destroy, :admin_view]
 
@@ -58,7 +59,7 @@ class JobPostingsController < ApplicationController
 
     private
     def jobPostingParams
-        params.require(:job_posting).permit(:title, :company, :job_type_id, :pay_type_id, :location_type_id, :salary, :duties, :basic_qualifications, :education, :skills, :how_to_apply, :approved)
+        params.require(:job_posting).permit(:title, :company, :job_type_id, :pay_type_id, :location_type_id, :salary, :duties, :basic_qualifications, :education, :skills, :how_to_apply, :approved, :user_id)
     end
     
     def set_job_posting

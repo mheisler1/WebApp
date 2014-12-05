@@ -56,6 +56,9 @@
   <%= f.text_area :how_to_apply %>
   </div>
 
+<% if user_signed_in? %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+<% end %>
 
 <% if admin_signed_in? %>
   <div class="field">

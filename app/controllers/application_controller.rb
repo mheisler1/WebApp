@@ -28,7 +28,7 @@ def after_sign_in_path_for(resource)
   if resource.is_a?(Admin)
     admin_view_path
   else
-    display_path
+    user_index_path
   end
 end
 
